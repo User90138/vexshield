@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VexShield — инновационный токен с защитой AntiDump</title>
+  <title>VexShield — Главная</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f5f7fa;
       color: #222;
       margin: 0;
-      padding: 0 1rem 3rem;
+      padding: 0 1rem 4rem;
       line-height: 1.6;
     }
     header {
@@ -21,53 +21,55 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     header h1 {
       margin: 0;
       font-weight: 700;
       font-size: 1.8rem;
       letter-spacing: 1px;
-      display: inline-block;
-      vertical-align: middle;
+      cursor: default;
     }
     nav {
-      display: inline-block;
-      margin-left: 2rem;
-      vertical-align: middle;
+      display: flex;
+      gap: 1rem;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      margin: 0 0.75rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
+      padding: 0.5rem 0.75rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    nav a:hover {
-      background-color: rgba(255,255,255,0.3);
+    nav a:hover,
+    nav a:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #e0e0e0;
+      outline: none;
     }
-    section {
+    main {
       max-width: 900px;
       margin: 2rem auto;
       background: white;
-      border-radius: 8px;
-      padding: 2rem 2.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 2rem 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     h2 {
       color: #1a73e8;
       margin-top: 0;
-      font-weight: 600;
-      border-bottom: 2px solid #1a73e8;
+      font-weight: 700;
+      border-bottom: 3px solid #1a73e8;
       padding-bottom: 0.3rem;
+      font-size: 1.9rem;
     }
-    ul {
-      list-style: inside disc;
-      padding-left: 0;
-    }
-    ul li {
-      margin-bottom: 0.6rem;
+    p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
     footer {
       text-align: center;
@@ -75,43 +77,49 @@
       color: #666;
       font-size: 0.9rem;
       background: #e3eaf9;
+      box-shadow: 0 -2px 6px rgba(26, 115, 232, 0.15);
       position: fixed;
       bottom: 0;
       width: 100%;
-      box-shadow: 0 -2px 6px rgba(26, 115, 232, 0.15);
+      user-select: none;
     }
-    .social-buttons a {
-      margin: 0 0.5rem;
+    .social-links {
+      margin-bottom: 0.5rem;
+    }
+    .social-links a {
+      margin: 0 0.7rem;
       color: #1a73e8;
-      text-decoration: none;
       font-weight: 700;
-      font-size: 1.1rem;
+      text-decoration: none;
       transition: color 0.3s ease;
     }
-    .social-buttons a:hover {
+    .social-links a:hover,
+    .social-links a:focus {
       color: #145dbf;
+      outline: none;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        display: block;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      main {
+        padding: 1.5rem 1.5rem;
+        margin: 1rem;
       }
       nav {
-        display: block;
-        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
       nav a {
-        display: inline-block;
-        margin: 0.3rem 0.5rem 0 0;
-      }
-      section {
-        margin: 1rem;
-        padding: 1rem 1.5rem;
+        flex: 1 1 45%;
+        text-align: center;
+        margin-bottom: 0.5rem;
       }
       footer {
         position: static;
-        padding: 1rem;
       }
     }
   </style>
@@ -120,93 +128,26 @@
   <header>
     <h1>VexShield</h1>
     <nav>
-      <a href="#home">Главная</a>
-      <a href="#technology">Технология</a>
-      <a href="#contract">Контракт</a>
-      <a href="#airdrop">Аирдроп</a>
-      <a href="#contacts">Контакты</a>
+      <a href="index.html" aria-current="page">Главная</a>
+      <a href="technology.html">Технология</a>
+      <a href="contract.html">Контракт</a>
+      <a href="airdrop.html">Аирдроп</a>
+      <a href="contacts.html">Контакты</a>
     </nav>
   </header>
-
-  <section id="home">
+  <main>
     <h2>Добро пожаловать в VexShield</h2>
-    <p>
-      VexShield — это инновационный дефляционный токен (VSH) с передовой технологией защиты AntiDump,  
-      которая обеспечивает стабильность цены и защищает инвесторов от резких падений и манипуляций на рынке.
-    </p>
-  </section>
-
-  <section id="technology">
-    <h2>Технология AntiDump</h2>
-    <p>
-      Технология AntiDump — это комплекс интеллектуальных механизмов, которые автоматически регулируют продажи токенов,  
-      предотвращая резкие дампы и сохраняя ликвидность проекта.  
-      Основные функции включают:
-    </p>
-    <ul>
-      <li>Динамическая комиссия на продажи при резких падениях цены</li>
-      <li>Лимитирование крупных продаж для снижения волатильности</li>
-      <li>Автоматический выкуп и сжигание токенов для повышения стоимости</li>
-      <li>Управление защитой через NFT ShieldPass</li>
-    </ul>
-  </section>
-
-  <section id="contract">
-    <h2>Контракт токена</h2>
-    <p>
-      Контракт VexShield разработан с соблюдением лучших стандартов безопасности и оптимизации.  
-      Он расположен в сети Ethereum (или выбранной сети) и доступен по адресу:
-    </p>
-    <p><strong>0x1234567890abcdef1234567890abcdef12345678</strong></p>
-    <p>
-      Основные параметры контракта:
-    </p>
-    <ul>
-      <li>Общее количество токенов: 1,000,000,000 VSH</li>
-      <li>Дефляционный механизм с автоматическим сжиганием</li>
-      <li>Интеграция с AntiDump для защиты цены</li>
-      <li>Поддержка NFT ShieldPass для управления защитой</li>
-    </ul>
-  </section>
-
-  <section id="airdrop">
-    <h2>Аирдроп</h2>
-    <p>
-      Мы проводим регулярные аирдропы для наших сообщников и держателей токенов!  
-      Чтобы участвовать, выполните простые условия:
-    </p>
-    <ul>
-      <li>Зарегистрируйтесь на нашем сайте</li>
-      <li>Подключите кошелёк с поддержкой сети VexShield</li>
-      <li>Выполните ежедневный вход (Daily Check-In) для накопления бонусов</li>
-      <li>Держите минимум 5 USDT на балансе в сети Base для участия</li>
-    </ul>
-    <p>
-      Следите за обновлениями на наших каналах, чтобы не пропустить следующий аирдроп!
-    </p>
-  </section>
-
-  <section id="contacts">
-    <h2>Контакты</h2>
-    <p>
-      Свяжитесь с нами для вопросов, предложений и поддержки:
-    </p>
-    <ul>
-      <li>Email: <a href="mailto:contact@vexshield.io">contact@vexshield.io</a></li>
-      <li>Telegram: <a href="https://t.me/vexshield" target="_blank" rel="noopener noreferrer">@vexshield</a></li>
-      <li>Twitter: <a href="https://twitter.com/vexshield" target="_blank" rel="noopener noreferrer">@vexshield</a></li>
-    </ul>
-  </section>
-
+    <p>VexShield — это инновационный дефляционный токен (VSH) с передовой технологией защиты AntiDump, которая обеспечивает стабильность цены и защищает инвесторов от резких падений и манипуляций на рынке.</p>
+  </main>
   <footer>
-    <div class="social-buttons">
+    <div class="social-links">
       <a href="https://t.me/vexshield" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a> |
       <a href="https://twitter.com/vexshield" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a> |
       <a href="mailto:contact@vexshield.io" aria-label="Email">Email</a>
     </div>
-    <div>
-      &copy; 2025 VexShield. Все права защищены.
-    </div>
+    &copy; 2025 VexShield. Все права защищены.
   </footer>
 </body>
 </html>
+
+   

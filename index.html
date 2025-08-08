@@ -10,28 +10,49 @@
       background: #f5f7fa;
       color: #222;
       margin: 0;
-      padding: 0 1rem;
+      padding: 0 1rem 3rem;
       line-height: 1.6;
     }
     header {
       background: #1a73e8;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 1.5rem 1rem;
       box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     header h1 {
       margin: 0;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       letter-spacing: 1px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    nav {
+      display: inline-block;
+      margin-left: 2rem;
+      vertical-align: middle;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: rgba(255,255,255,0.3);
     }
     section {
       max-width: 900px;
       margin: 2rem auto;
       background: white;
       border-radius: 8px;
-      padding: 2rem;
+      padding: 2rem 2.5rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     h2 {
@@ -50,16 +71,46 @@
     }
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       color: #666;
       font-size: 0.9rem;
+      background: #e3eaf9;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 6px rgba(26, 115, 232, 0.15);
+    }
+    .social-buttons a {
+      margin: 0 0.5rem;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .social-buttons a:hover {
+      color: #145dbf;
     }
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.8rem;
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      nav {
+        display: block;
+        margin-left: 0;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.3rem 0.5rem 0 0;
       }
       section {
         margin: 1rem;
+        padding: 1rem 1.5rem;
+      }
+      footer {
+        position: static;
         padding: 1rem;
       }
     }
@@ -67,10 +118,18 @@
 </head>
 <body>
   <header>
-    <h1>VexShield — твой надёжный щит от дампа</h1>
+    <h1>VexShield</h1>
+    <nav>
+      <a href="#about">О проекте</a>
+      <a href="#importance">Почему это важно</a>
+      <a href="#features">Особенности</a>
+      <a href="#nft">NFT ShieldPass</a>
+      <a href="#mission">Миссия</a>
+      <a href="#join">Присоединяйся</a>
+    </nav>
   </header>
 
-  <section>
+  <section id="about">
     <h2>Что такое VexShield?</h2>
     <p>
       VexShield — это инновационный <strong>дефляционный токен (VSH)</strong> с встроенной технологией защиты от резких падений цены — AntiDump.<br />
@@ -78,7 +137,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="importance">
     <h2>Почему это важно?</h2>
     <ul>
       <li>Крипторынок подвержен резким дампам и манипуляциям</li>
@@ -88,7 +147,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="features">
     <h2>Ключевые особенности VexShield</h2>
     <ul>
       <li><strong>Динамическая комиссия на продажу</strong> при резких падениях цены</li>
@@ -99,7 +158,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="nft">
     <h2>NFT ShieldPass — лицензия для создателей монет и блокчейнов</h2>
     <p>
       NFT ShieldPass — это уникальный цифровой пропуск, который даёт право <strong>использовать технологию AntiDump</strong> в любых токенах, сетях и блокчейнах.<br />
@@ -113,14 +172,14 @@
     </ul>
   </section>
 
-  <section>
+  <section id="mission">
     <h2>Миссия проекта</h2>
     <p>
       Создать надежный и устойчивый криптотокен, который поможет инвесторам защитить капитал и получать стабильный доход, выводя защиту от дампа на новый уровень.
     </p>
   </section>
 
-  <section>
+  <section id="join">
     <h2>Присоединяйся к VexShield!</h2>
     <p>
       Стань частью проекта, который меняет правила игры на крипторынке.<br />
@@ -129,7 +188,14 @@
   </section>
 
   <footer>
-    &copy; 2025 VexShield. Все права защищены.
+    <div class="social-buttons">
+      <a href="https://t.me/vexshield" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a> |
+      <a href="https://twitter.com/vexshield" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a> |
+      <a href="mailto:contact@vexshield.io" aria-label="Email">Email</a>
+    </div>
+    <div>
+      &copy; 2025 VexShield. Все права защищены.
+    </div>
   </footer>
 </body>
 </html>
